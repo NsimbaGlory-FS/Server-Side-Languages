@@ -12,7 +12,8 @@ const form = (req, res) => {
 
 const show = (req, res) => {
     const product = Products.find(req.params.id)
-    res.json(product)
+    //res.json(product)
+    res.render('views/products/show', { product })
 }
 
 const create = (req, res) => {
