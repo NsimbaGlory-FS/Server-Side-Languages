@@ -7,7 +7,15 @@ const index = (req, res) => {
 }
 
 const form = (req, res) => {
-    res.send('Product.form')
+    // res.send('Products.form')
+    if (req.params.id) {
+        const product = Products.find(req.params.id)
+        res.render('views/products/edit', { product })
+
+    } else {
+        res.render('views/products/create')
+    }
+
 }
 
 const show = (req, res) => {
