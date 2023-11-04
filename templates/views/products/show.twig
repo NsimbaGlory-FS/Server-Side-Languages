@@ -1,1 +1,11 @@
-{% extends '../base.twig' %}
+{% extends 'layouts/base.twig' %}
+
+{% block main_content %}
+<ul>
+    <li>
+        <label>Id: </label> {{ product.id }}
+        <label>Name: </label> {{ product.name }}
+    </li>
+</ul>
+
+{% endblock %}
