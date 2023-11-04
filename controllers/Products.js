@@ -2,7 +2,7 @@ const Products = require('./models/Products')
 
 const index = (req, res) => {
     const products = Products.all()
-    res.render('products/index' , { products })
+    res.render('views/products/index' , { products })
     // res.json(products)
 }
 
