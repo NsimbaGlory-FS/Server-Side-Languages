@@ -26,12 +26,12 @@ const show = (req, res) => {
 
 const create = (req, res) => {
     const product = Products.create(req.body)
-    res.json(product)
+    res.redirect('/products/'+ product.id)
 }
 
 const update = (req, res) => {
     const product = Products.update(req.params.id, req.body)
-    res.json(product)
+    res.redirect('/products/'+ req.params.id)
 }
 
 const remove = (req, res) => {
