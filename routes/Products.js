@@ -1,6 +1,6 @@
-const express = require('express')
-const router = express.Router()
-const productCtrl = require('../controllers/Products')
+const express = require('express');
+const router = express.Router();
+const productCtrl = require('../controllers/Products');
 
 
 
@@ -19,4 +19,4 @@ router.post('/:id/delete', productCtrl.remove);
 
 
 
-module.exports = router
+module.exports = router;
