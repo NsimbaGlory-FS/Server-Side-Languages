@@ -1,44 +1,34 @@
-const Products = require('./models/Products')
+const { Image } = require('../models')
 
-const index = (req, res) => {
-    const products = Products.all()
-    res.render('views/products/index' , { products })
-    // res.json(products)
+const index =  async (req, res) => {
+    const images = await Image.findAll()
+    res.render('views/images/index' , { images })
 }
-
-const form = (req, res) => {
-    // res.send('Products.form')
+const form = async (req, res) => {
     if (req.params.id) {
-        const product = Products.find(req.params.id)
-        res.render('views/products/edit', { product })
-
+        const image = await Image.findByPk(req.params.id)
+        res.render('views/images/edit', { image })
     } else {
-        res.render('views/products/create')
+        res.render('views/images/create')
     }
-
 }
-
-const show = (req, res) => {
-    const product = Products.find(req.params.id)
-    //res.json(product)
-    res.render('views/products/show', { product })
+const show = async (req, res) => {
+    const image = await Image.findByPk(req.params.id)
+    res.render('views/images/show', { image })
 }
-
-const create = (req, res) => {
-    const product = Products.create(req.body)
-    res.redirect('/products/' + product.id)
+const create = async (req, res) => {
+    const image = await Image.create(req.body)
+    res.redirect('/images/' + image.id)
 }
-
-const update = (req, res) => {
-    const product = Products.update(req.params.id, req.body)
-    res.redirect('/products/' + req.params.id)
+const update = async (req, res) => {
+    const image = await Image.update(req.body, {
+        where: { id: req.params.id}
+    })
+    res.redirect('/images/' + req.params.id)
 }
-
-const remove = (req, res) => {
-    const products = Products.remove(req.params.id)
-    res.redirect('/products')
-    // res.json(products)
+const remove = async (req, res) => {
+    const images = await Image.destroy({ where: { id: req.params.id }})
+    res.redirect('/images')
 }
-
 
 module.exports = { index, form, show, create, update, remove }

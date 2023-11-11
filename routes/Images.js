@@ -1,33 +1,22 @@
-const Products = require('./models/Products')
-
-const index = (req, res) => {
-    const products = Products.all()
-    res.json(products)
-}
-
-const form = (req, res) => {
-    res.send('Product.form')
-}
-
-const show = (req, res) => {
-    const product = Products.find(req.params.id)
-    res.json(product)
-}
-
-const create = (req, res) => {
-    const product = Products.create(req.body)
-    res.json(product)
-}
-
-const update = (req, res) => {
-    const product = Products.update(req.params.id, req.body)
-    res.json(product)
-}
-
-const remove = (req, res) => {
-    const products = Products.remove(req.params.id)
-    res.json(products)
-}
+const express = require('express');
+const router = express.Router();
+const imageCtrl = require('../controllers/Images');
 
 
-module.exports = { index, form, show, create, update, remove }
+
+router.get('/', imageCtrl.index);
+router.get('/new', imageCtrl.form);
+router.get('/:id/edit', imageCtrl.form);
+router.get('/:id', imageCtrl.show);
+router.post('/', imageCtrl.create);
+router.delete('/:id', imageCtrl.remove);
+router.post('/:id', imageCtrl.update);
+router.post('/:id/delete', imageCtrl.remove);
+
+
+
+
+
+
+
+module.exports = router;

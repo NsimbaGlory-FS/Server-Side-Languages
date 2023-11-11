@@ -1,44 +1,35 @@
-const Products = require('./models/Products')
+const { Variant } = require('../models')
 
-const index = (req, res) => {
-    const products = Products.all()
-    res.render('views/products/index' , { products })
-    // res.json(products)
+const index =  async (req, res) => {
+    const variants = await Variant.findAll()
+    res.render('views/variants/index' , { variants })
+    // res.json(variants)
 }
-
-const form = (req, res) => {
-    // res.send('Products.form')
+const form = async (req, res) => {
     if (req.params.id) {
-        const product = Products.find(req.params.id)
-        res.render('views/products/edit', { product })
-
+        const variant = await Variant.findByPk(req.params.id)
+        res.render('views/variants/edit', { variant })
     } else {
-        res.render('views/products/create')
+        res.render('views/variants/create')
     }
-
 }
-
-const show = (req, res) => {
-    const product = Products.find(req.params.id)
-    //res.json(product)
-    res.render('views/products/show', { product })
+const show = async (req, res) => {
+    const variant = await Variant.findByPk(req.params.id)
+    res.render('views/variants/show', { variant })
 }
-
-const create = (req, res) => {
-    const product = Products.create(req.body)
-    res.redirect('/products/' + product.id)
+const create = async (req, res) => {
+    const variant = await Variant.create(req.body)
+    res.redirect('/variants/' + variant.id)
 }
-
-const update = (req, res) => {
-    const product = Products.update(req.params.id, req.body)
-    res.redirect('/products/' + req.params.id)
+const update = async (req, res) => {
+    const variant = await Variant.update(req.body, {
+        where: { id: req.params.id}})
+    res.redirect('/variants/' + req.params.id)
 }
-
-const remove = (req, res) => {
-    const products = Products.remove(req.params.id)
-    res.redirect('/products')
+const remove = async (req, res) => {
+    const variants = await Variant.destroy({ where: { id: req.params.id }})
+    res.redirect('/variants')
     // res.json(products)
 }
-
 
 module.exports = { index, form, show, create, update, remove }
