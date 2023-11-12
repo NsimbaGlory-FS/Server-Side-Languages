@@ -1,4 +1,4 @@
-const { Image } = require('../models')
+const { Image } = require('../controllers/Images')
 
 const index =  async (req, res) => {
     const images = await Image.findAll()

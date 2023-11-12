@@ -1,4 +1,4 @@
-const { Variant } = require('../models')
+const { Variant } = require('../controllers/Variants')
 
 const index =  async (req, res) => {
     const variants = await Variant.findAll()
