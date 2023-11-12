@@ -7,6 +7,14 @@
         <input type="text" name="title" id="title" value="{{ variant.title }}" />
     </div>
     <div>
+        <label>Product:</label>
+        <select name="productId">
+            {% for product in products %}
+                <option value="{{ product.id }}">{{ product.title }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
         <input type="submit" type="submit" />
         
     </div>
