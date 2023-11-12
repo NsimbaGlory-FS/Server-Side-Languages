@@ -1,10 +1,10 @@
-<form method="POST" action="/products/{% if product.id %}{{ product.id }}{% endif %}">
-    {% if product.id %}
-        <input type="hidden" name="id" value="{{ product.id }}">
+<form method="POST" action="/images/{% if image.id %}{{ image.id }}{% endif %}">
+    {% if image.id %}
+        <input type="hidden" name="id" value="{{ image.id }}">
     {% endif %}
     <div>
-        <label for="name">Name:</label>
-        <input type="text" name="name" id="name" value="{{ product.name }}" />
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" value="{{ image.title }}" />
     </div>
     <div>
         <input type="submit" type="submit" />
