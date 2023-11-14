@@ -6,11 +6,11 @@ const variantCtrl = require('../controllers/Variants');
 
 router.get('/', variantCtrl.index);
 router.get('/new', variantCtrl.form);
-router.get('/:id/edit', variantCtrl.form);
 router.get('/:id', variantCtrl.show);
+router.get('/:id/edit', variantCtrl.form);
 router.post('/', variantCtrl.create);
-router.delete('/:id', variantCtrl.remove);
 router.post('/:id', variantCtrl.update);
+router.delete('/:id', variantCtrl.remove);
 router.post('/:id/delete', variantCtrl.remove);
 
 
