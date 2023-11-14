@@ -11,7 +11,7 @@ router.get('/:id', productCtrl.show);
 router.post('/', productCtrl.create);
 router.delete('/:id', productCtrl.remove);
 router.post('/:id', productCtrl.update);
-router.post('/:id/delete', productCtrl.remove);
+router.get('/:id/delete', productCtrl.remove);
 
 
 
