@@ -1,4 +1,4 @@
-const Products = require('./models/Products')
+const { Products } = require('../models')
 
 const index = (req, res) => {
     const products = Products.all()
