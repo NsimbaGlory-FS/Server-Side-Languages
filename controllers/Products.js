@@ -6,6 +6,7 @@ const index = async (req, res) => {
     // res.json(products)
 }
 
+
 const form = (req, res) => {
     // res.send('Products.form')
     if (req.params.id) {
