@@ -16,12 +16,11 @@ module.exports = (sequelize, DataTypes) => {
   }
   Product.init({
     title: DataTypes.STRING,
-    price: DataTypes.FLOAT,
-    description: DataTypes.TEXT,
     slug: DataTypes.STRING,
+    description: DataTypes.TEXT('long'),
+    price: DataTypes.FLOAT,
     is_published: DataTypes.BOOLEAN
-
-}, {
+  }, {
     sequelize,
     modelName: 'Product',
   });
