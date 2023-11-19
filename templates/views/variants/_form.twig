@@ -7,6 +7,24 @@
         <input type="text" name="title" id="title" value="{{ variant.title }}" />
     </div>
     <div>
+        <label for="slug">Slug:</label>
+        <input type="text" name="slug" id="slug" value="{{ variant.slug }}" />
+    </div>
+    <div>
+        <label for="description">Description:</label>
+        <input type="description" name="description" id="description" value="{{ variant.description }}" />
+    </div>
+    
+    <div>
+        <label for="price">Price:</label>
+        <input type="text" name="title" id="title" value="{{ variant.title }}" />
+    </div>
+    <div>
+        <label for="inventory">Inventory:</label>
+        <input type="text" name="inventory" id="inventory" value="{{ variant.inventory }}" />
+    </div>
+    
+    <div>
         <label>Product:</label>
         <select name="productId">
             {% for product in products %}
