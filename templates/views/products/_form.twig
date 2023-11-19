@@ -20,7 +20,7 @@
     </div>
     <div>
         <label for="is_published">Is_published:</label>
-        <input type="text" name="is_published" id="is_published" value="{{ product.is_published }}" />
+        <input type="checkbox" name="is_published" id="is_published" value="1" {% if product.is_published %}checked{% endif %} />
     </div>
     <div>
         <input type="submit" type="submit" />

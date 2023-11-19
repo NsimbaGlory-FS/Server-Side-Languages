@@ -9,7 +9,7 @@ const index = async (req, res) => {
 
 const form = async (req, res) => {
     if (req.params.id) {
-        const product = await Product.findByPK(req.params.id)
+        const product = await Product.findByPk(req.params.id)
         res.render('views/products/edit', { product })
 
     } else {
@@ -19,7 +19,7 @@ const form = async (req, res) => {
 }
 
 const show = async (req, res) => {
-    const product = await Product.findByPK(req.params.id)
+    const product = await Product.findByPk(req.params.id)
     //res.json(product)
     res.render('views/products/show', { product })
 }
