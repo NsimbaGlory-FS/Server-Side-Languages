@@ -9,6 +9,16 @@
      <li>
         <label>Name: </label> {{ product.title }}
      </li>
+     <li>
+        <label>Slug: </label> {{ product.slug }}
+    </li>
+     <li>
+        <label>Description: </label> {{ product.description }}
+     </li>
+     <li>
+        <label>Price: </label> {{ product.price }}
+    </li>
+     
 </ul>
 <p>
 <a href="/products/{{ product.id }}/edit">Edit</a> | <a href="/products/{{ product.id }}/delete">Delete</a> 
