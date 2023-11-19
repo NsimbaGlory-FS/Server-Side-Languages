@@ -16,6 +16,15 @@ module.exports = {
       price: {
         type: Sequelize.FLOAT
       },
+      slug: {
+        type: Sequelize.STRING
+      },
+      description: {
+        type: Sequelize.TEXT
+      },
+      is_published: {
+        type: Sequelize.BOOLEAN
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

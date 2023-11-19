@@ -19,6 +19,15 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: true
       },
+      slug: {
+        type: Sequelize.STRING
+      },
+      description: {
+        type: Sequelize.TEXT
+      },
+      inventory: {
+        type: Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
