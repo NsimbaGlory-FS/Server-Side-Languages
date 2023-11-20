@@ -1,14 +1,13 @@
 version: '3.7'
+
 services:
   mariadb:
-    image: mysql
+    image: mariadb
     restart: always
     networks: 
       - asl
     environment:
-      MYSQL_ROOT_PASSWORD: root
-    volumes:
-      - ./data:/var/lib/mysql
+      MARIADB_ROOT_PASSWORD: root
   node:
     image: "node:16"
     user: "node"
@@ -31,5 +30,6 @@ services:
     tty: true
     depends_on:
       - mariadb
+
 networks:
   asl:
