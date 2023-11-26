@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 
-// GET /products/all HTTP/1.1, Page: 2, Sort: price, Order: desc
+// GET /products/all HTTP/1.1, Page: 2, Sort: price, Order: descs
 
 app.get('/products/:productName', (request, response) => {
     response.send('Product Page! Product name: Sort: price, Order: desc' + request.params.productName)
