@@ -8,13 +8,6 @@ app.get('/products/:productName', (request, response) => {
 })
 
 
-// GET /products/8719 HTTP/1.1.
-
-app.get('/products/:productId', (request, response) => {
-    response.send(
-        'Product id: ' + request.params.productId,
-        )
-})
 
 // GET /products/8719-small-red HTTP/1.1
 
@@ -24,6 +17,17 @@ app.get('/products/:productId-:productName', (request, response) => {
         'Product id: ' + request.params.productId,
         )
 })
+
+
+// GET /products/8719 HTTP/1.1.
+
+app.get('/products/:productId', (request, response) => {
+    response.send(
+        'Product id: ' + request.params.productId,
+        )
+})
+
+
 
 
 
